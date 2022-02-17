@@ -11,7 +11,7 @@
     };
     overlays = [
       inputs.nix-hls.overlay
-      # inputs.emacs-overlay.overlay
+      inputs.emacs-overlay.overlay
       inputs.nix-colmena.overlay
       inputs.smunix-nur.overlay
       (_: p: { picom = p.picom.overrideAttrs (_: { src = inputs.jpicom; }); })
@@ -23,7 +23,7 @@
     file = {
       "axarva.fonts" = {
         source = ./axarva/fonts;
-        target = "./.local/share/fonts";
+        target = "./.local/share/axarva-fonts";
       };
       "axarva.rofi" = {
         source = ./axarva/config/rofi;
@@ -50,7 +50,7 @@
         # source = ./awesome.moletrooper;
         target = "./.config/awesome";
       };
-#      "xscreensaver" = { source = ./.xscreensaver; };
+
       "stalonetrayrc" = {
         source = pkgs.writeText "stalonetrayrc" ''
           decorations none
@@ -147,7 +147,7 @@
       # inputs.nix-hls.packages.x86_64-linux.haskell-language-server-921
       # inputs.nix-hls.packages.x86_64-linux.haskell-language-server-8107
       inputs.eww.defaultPackage.x86_64-linux
-      # haskell-language-server
+      haskell-language-server
       # (hlsHpkgs "ghc8107").haskell-language-server
       haskellPackages.cabal-install
       haskellPackages.fourmolu
@@ -404,8 +404,9 @@
     doom-emacs = {
       enable = true;
       doomPrivateDir = ./doom.d;
-      # emacsPackage = pkgs.emacsGcc;
       # emacsPackagesOverlay = inputs.emacs-overlay.overlay;
+      emacsPackage = emacsGit;
+      # emacsPackage = pkgs.emacsGcc;
     };
     #
     # GIT

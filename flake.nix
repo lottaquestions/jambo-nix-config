@@ -1,12 +1,12 @@
 {
-  description = "dratrion configuration";
+  description = "jambo configuration";
   inputs = {
     # nixpkgs.url = github:NixOs/nixpkgs/nixpkgs-unstable;
-    # nixpkgs.url = github:NixOs/nixpkgs/master;
+    nixpkgs.url = github:NixOs/nixpkgs/master;
     # https://github.com/nix-community/home-manager
     # https://github.com/nix-community/nix-doom-emacs
     # https://github.com/nix-community/home-manager/issues/1877
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixF.url = "github:nixos/nix?ref=master";
     nixos.url = "github:nixos/nixpkgs/master";
     # nur.url = "github:nix-community/NUR";
@@ -32,7 +32,7 @@
   outputs = { self, nixpkgs, nixos, nixF, home-manager, nix-doom-emacs
     , emacs-overlay, nix-haskell-updates, nix-smunix-pkgs, nix-hls, nix-colmena
     , smunix-nur, moletrooper-dotfiles, eww, jpicom, ... }@inputs: {
-      nixosConfigurations.dratrion = nixos.lib.nixosSystem {
+      nixosConfigurations.jambo = nixos.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           (import ./configuration.nix)
