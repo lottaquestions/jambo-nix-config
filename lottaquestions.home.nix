@@ -46,7 +46,7 @@
         target = "./.config/axarva/dunst";
       };
       "awesome" = {
-        source = ./awesome.dratrion;
+        source = ./awesome.lottaquestions;
         # source = ./awesome.moletrooper;
         target = "./.config/awesome";
       };
@@ -74,7 +74,7 @@
         target = "./.stalonetrayrc";
       };
       # "tmux" = {
-      #   source = ./tmux.dratrion;
+      #   source = ./tmux.lottaquestions;
       #   target = "./.tmux";
       # };
       "xmobarrc" = {
@@ -383,7 +383,7 @@
       enable = true;
       inactiveInterval = 5;
       arguments = [
-        "-u ${self}/awesome.dratrion/wallpaper/"
+        "-u ${self}/awesome.lottaquestions/wallpaper/"
         "--fx dim,pixel"
         "--lock dimblur"
       ];
@@ -744,7 +744,7 @@
             spawnOnce "${picom}/bin/picom --experimental-backends"
             spawnOnce "${haskellPackages.greenclip}/bin/greenclip daemon"
             -- spawnOnce "dunst"
-            spawnOnce "${feh}/bin/feh --bg-scale ${self}/awesome.dratrion/wallpaper/wallpaper.jpg"
+            spawnOnce "${feh}/bin/feh --bg-scale ${self}/awesome.lottaquestions/wallpaper/wallpaper.jpg"
             spawn "${conky}/bin/conky -c ~/.conky/conky_system -y100 -c ~/conky_and_lua_by_mr_mattz_danuesx/.conkyrc"
             return ()
 

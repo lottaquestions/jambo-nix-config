@@ -43,7 +43,7 @@
               useGlobalPkgs = false;
               useUserPackages = true;
               users = {
-                lottaquestions = import ./smunix.home.nix inputs;
+                lottaquestions = import ./lottaquestions.home.nix inputs;
                 #root = import ./root.home.nix inputs;
               };
             };
